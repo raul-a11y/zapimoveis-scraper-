@@ -1,1 +1,4 @@
-
+selenium
+pandas
+webdriver_manager # Para gerenciar o driver do navegador (Chrome, Firefox, etc.)
+openpyxl # Para escrita em arquivos .xlsx com pandas
