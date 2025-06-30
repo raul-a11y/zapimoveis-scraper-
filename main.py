@@ -23,3 +23,15 @@ def run_scraper_and_save():
 
 if __name__ == '__main__':
     run_scraper_and_save()
+
+if not df_listings.empty:
+        output_file = 'data/imoveis_goiania.xlsx'
+        
+        # Cria o diretório 'data' se não existir
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        
+        # Salvando com o engine explícito
+        df_listings.to_excel(output_file, index=False, engine='openpyxl')
+        print(f"Dados salvos com sucesso em: {output_file}")
+    else:
+        print("Nenhum dado foi extraído. O DataFrame está vazio. Não foi possível criar a planilha.")
