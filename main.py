@@ -15,7 +15,8 @@ def run_scraper_and_save():
         # Cria o diretório 'data' se não existir
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
-        df_listings.to_excel(output_file, index=False)
+        # Certifica-se de que o engine de escrita é o openpyxl
+        df_listings.to_excel(output_file, index=False, engine='openpyxl')
         print(f"Dados salvos com sucesso em: {output_file}")
     else:
         print("Nenhum dado foi extraído.")
